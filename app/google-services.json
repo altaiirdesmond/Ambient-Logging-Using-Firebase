@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "112558841489",
+    "firebase_url": "https://projectespiot.firebaseio.com",
+    "project_id": "projectespiot",
+    "storage_bucket": "projectespiot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112558841489:android:1f38f06f1525044f",
+        "android_client_info": {
+          "package_name": "com.cdtekk.sensormonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112558841489-jl1baacnkjeokjk5s7k9628vba6rlglb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cdtekk.sensormonitor",
+            "certificate_hash": "0cb9d6497e5644fda043262f41b4c31a1ca252e4"
+          }
+        },
+        {
+          "client_id": "112558841489-ohlof24q9b0klsjsnckbv2dv7bv0nf0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYb0EfMCCPPSMZFqUskJ-2ElaUq3FYXok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112558841489-ohlof24q9b0klsjsnckbv2dv7bv0nf0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sensor monitoring</string>
+    <string name="title">Android monitoring app</string>
+    <string name="temperature">Temperature: …</string>
+    <string name="humidity">Humidity: …</string>
+    <string name="dataLog">Data Log</string>
+    <string name="search_hint">Search sensor log</string>
+    <string name="ver">0.507</string>
+</resources>

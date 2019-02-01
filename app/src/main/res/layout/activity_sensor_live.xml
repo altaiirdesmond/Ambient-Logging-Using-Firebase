@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SensorLogsActivity"
+    android:background="@drawable/background_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+        <TextView
+            android:text="@string/title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:elevation="4dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:background="@drawable/layout_round_white_corner"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Humidity"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/humidity"
+                tools:ignore="ContentDescription"
+                android:layout_marginStart="40dp"/>
+
+            <TextView
+                android:id="@+id/humidValue"
+                android:text="..."
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="#2196F3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:elevation="4dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/layout_round_white_corner"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:orientation="horizontal">
+            <TextView
+                android:text="Temperature"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/temperature"
+                tools:ignore="ContentDescription"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/tempValue"
+                android:text="..."
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="#F44336"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp"
+        android:text="@string/ver"
+        android:textSize="10dp"
+        android:textColor="#B4B4B4"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnDataLog"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="224dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/layout_round_corner"
+        android:textColor="#000000"
+        android:text="@string/dataLog" />
+    <!--***************************************************************** Fan1 -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="105dp"
+        android:text="Fan1"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:text="..."
+        android:id="@+id/fan1State"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginStart="85dp"
+        android:textStyle="bold"/>
+
+    <ImageButton
+        android:elevation="4dp"
+        android:id="@+id/btnFan1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/ic_baseline_toggle_on_24px"
+        tools:ignore="ContentDescription" />
+    <!--***************************************************************** Fan2 -->
+    <TextView
+        android:text="Fan2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="95dp"
+        android:layout_marginStart="105dp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:text="..."
+        android:id="@+id/fan2State"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_marginBottom="110dp"
+        android:layout_marginStart="85dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtAutoState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="228dp"
+        android:text="..."
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:elevation="4dp"
+        android:id="@+id/btnFan2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="105dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/ic_baseline_toggle_off_24px"/>
+
+    <ImageButton
+        android:elevation="4dp"
+        android:id="@+id/btnAuto"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="216dp"
+        android:background="@drawable/layout_round_button"
+        android:src="@drawable/ic_baseline_toggle_on_24px"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>
