@@ -19,14 +19,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class SensorLogsActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    SensorAdapter sensorAdapter;
-    DatabaseReference dbSensorData;
-    SearchView searchViewSensorData;
+    private SensorAdapter sensorAdapter;
+    private DatabaseReference dbSensorData;
+    private SearchView searchViewSensorData;
 
     List<SensorData> sensorDataList;
 
@@ -39,7 +37,7 @@ public class SensorLogsActivity extends AppCompatActivity {
         sensorDataList = new ArrayList<>();
 
         searchViewSensorData = findViewById(R.id.searchViewSensorData);
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -49,7 +47,7 @@ public class SensorLogsActivity extends AppCompatActivity {
         dbSensorData = FirebaseDatabase.getInstance().getReference("/sensor/dht");
         dbSensorData.addValueEventListener(valueEventListener);
 
-        // Defaults search text to last recorded time
+        // Defaults search text to latest recorded time
         dbSensorData.orderByChild("time").limitToLast(1).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -70,6 +68,7 @@ public class SensorLogsActivity extends AppCompatActivity {
             }
         });
 
+        // Will listen to the changes made on the search view text
         searchViewSensorData.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

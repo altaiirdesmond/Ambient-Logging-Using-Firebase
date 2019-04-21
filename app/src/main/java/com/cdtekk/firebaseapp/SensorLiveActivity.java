@@ -21,20 +21,19 @@ import java.util.Objects;
 
 public class SensorLiveActivity extends Activity {
 
-    DatabaseReference dbSensorData;
-    TextView textViewTempVal;
-    TextView textViewHumidVal;
-    TextView textViewFanState1;
-    TextView textViewFanState2;
-    TextView textViewAutoState;
-    ImageButton buttonAuto;
-    ImageButton buttonFan1;
-    ImageButton buttonFan2;
-    Button buttonDatalog;
+    private DatabaseReference dbSensorData;
+    private TextView textViewTempVal;
+    private TextView textViewHumidVal;
+    private TextView textViewFanState1;
+    private TextView textViewFanState2;
+    private TextView textViewAutoState;
+    private ImageButton buttonAuto;
+    private ImageButton buttonFan1;
+    private ImageButton buttonFan2;
 
-    float temp;
-    float humid;
-    boolean isAuto;
+    private float temp;
+    private float humid;
+    private boolean isAuto;
 
     @SuppressLint({"SetTextI18n", "ShowToast"})
     @Override
@@ -42,10 +41,10 @@ public class SensorLiveActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensor_live);
 
+        Button buttonDatalog = findViewById(R.id.btnDataLog);
         buttonAuto = findViewById(R.id.btnAuto);
         buttonFan1 = findViewById(R.id.btnFan1);
         buttonFan2 = findViewById(R.id.btnFan2);
-        buttonDatalog = findViewById(R.id.btnDataLog);
         textViewHumidVal = findViewById(R.id.humidValue);
         textViewTempVal = findViewById(R.id.tempValue);
         textViewFanState1 = findViewById(R.id.fan1State);
@@ -71,11 +70,11 @@ public class SensorLiveActivity extends Activity {
                 // Get auto state
                 isAuto = (long) dataSnapshot.child("Auto").getValue() > 0;
                 if(isAuto){
-                    // Set state
-                    if(temp > 30){
+                    // Set state. Fans will remain on
+                    if(temp >= 30){
                         dbSensorData.child("Fan1").setValue(1);
                         dbSensorData.child("Fan2").setValue(1);
-                    }else if(temp < 30){
+                    }else if(temp < 30){ // Fans will remain off
                         dbSensorData.child("Fan1").setValue(0);
                         dbSensorData.child("Fan2").setValue(0);
                     }
@@ -109,7 +108,7 @@ public class SensorLiveActivity extends Activity {
                         humid = Objects.requireNonNull(snapshot.getValue(SensorData.class)).getHumidity();
                         temp = Objects.requireNonNull(snapshot.getValue(SensorData.class)).getTemperature();
                         if(isAuto){
-                            if(temp > 30){
+                            if(temp >= 30){
                                 dbSensorData.child("Fan1").setValue(1);
                                 dbSensorData.child("Fan2").setValue(1);
                             }else if(temp < 30){
