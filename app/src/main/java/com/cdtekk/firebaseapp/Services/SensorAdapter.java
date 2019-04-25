@@ -41,8 +41,8 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorView
         sensorViewHolder.textViewDate.setText(sensorData.getTime());
         sensorViewHolder.textViewTemperature.setText(String.format("%.2f", sensorData.getTemperature()) + " °C");
         sensorViewHolder.textViewHumidity.setText(String.format("%.2f", sensorData.getHumidity()) + " %");
-        sensorViewHolder.textViewFan1State.setText(sensorData.getFan1State() == 1 ? "FAN1:ON" : "FAN1:OFF");
-        sensorViewHolder.textViewFan2State.setText(sensorData.getFan2State() == 1 ? "FAN2:ON" : "FAN2:OFF");
+        sensorViewHolder.textViewFan1State.setText(sensorData.getFan1() == 0 ? "FAN1:OFF" : "FAN1:ON");
+        sensorViewHolder.textViewFan2State.setText(sensorData.getFan2() == 0 ? "FAN2:OFF" : "FAN2:ON");
     }
 
     @Override
@@ -52,21 +52,21 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorView
 
     class SensorViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewDate;
-        TextView textViewHumidity;
-        TextView textViewTemperature;
         TextView textViewFan1State;
         TextView textViewFan2State;
+        TextView textViewHumidity;
+        TextView textViewTemperature;
+        TextView textViewDate;
 
         @SuppressLint("CutPasteId")
         SensorViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewDate = itemView.findViewById(R.id.txtDate);
-            textViewHumidity = itemView.findViewById(R.id.txtHumid0);
-            textViewTemperature = itemView.findViewById(R.id.txtTemp0);
             textViewFan1State = itemView.findViewById(R.id.txtFan1State);
             textViewFan2State = itemView.findViewById(R.id.txtFan2State);
+            textViewHumidity = itemView.findViewById(R.id.txtHumid0);
+            textViewTemperature = itemView.findViewById(R.id.txtTemp0);
+            textViewDate = itemView.findViewById(R.id.txtDate);
         }
     }
 }
